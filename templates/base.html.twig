@@ -6,10 +6,9 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         
-        <link rel="stylesheet" href="/css/app.css">
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
@@ -23,8 +22,13 @@
 
         {% include "partials/footer.html.twig" %}
 
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        {# // <script src="{‌{ asset('build/js/app.js') }}"></script> #}
+
+        <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
-        {% block javascripts %}{% endblock %}
+        
+        {% block javascripts %}
+            {# {‌{ encore_entry_script_tags('app') }} #}
+        {% endblock %}
     </body>
 </html>
